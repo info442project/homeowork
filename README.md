@@ -20,7 +20,7 @@ _**Donaid**_
 During this COVID-19 there are shortages of masks, gloves, food, and other essential supplies for healthcare workers. There is no platform where individuals or small businesses can start a campaign to support frontline healthcare workers and hospitals. Many of those who want to contribute either can’t leave their homes, don’t know how to help, and want to make a difference in their own communities.
 
 ### Problem statement:
-How might local seattleite donors increase donation quantity and quality to health care professionals in order to show recognition and gratitude to local healthcare workers.
+How might local seattleite donors increase donation quantity and quality to healthcare professionals in order to show recognition and gratitude to local healthcare workers.
 
 
 ## Research:
