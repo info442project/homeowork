@@ -8,7 +8,7 @@ During this COVID-19 there are shortages of masks, gloves, food, and other essen
 #### Problem statement:
 How might local seattleite donors increase donation quantity and quality to health care professionals in order to show recognition and gratitude to local healthcare workers.
 
-#### Solution
+## Solution
 _**Overall Goal:**_  </br>
 Our solution is creating a website that connects those who want to donate to local health care workers through a crowd campaign site. This can include anything from collecting surgical masks and then donating them to a local hospital, or collecting funds for x cause.</br></br>
 **Specific Solution**
