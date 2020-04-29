@@ -1,41 +1,47 @@
 ## Homework 4: Architecture
 
-All views are located under info442project/homeowork/
+All views are located under info442project/homeowork/src
 
 #### Views:
-HTML, Javascript,  WebSQL
+HTML, Javascript,  WebSQL, React
 - **Navbar**
-  - Contains the logo branding image, and directs users to the other html files
+  - This components ontains the logo branding image, and directs users to the other html files
   - Resides on the client side only
   - Does not communicate with other controllers
-- **Index.html**
+- **LandingPage.js**
   - This page displays a brief summary of what Donaid is and what can be done with it
   - Resides on client-side only
   - Does not communicate with other components
-- **campaignType.html**
-  - This page prompts the user to select what type of campaign they want to create
+- **CampaignType.js**
+  - This page prompts the user to select what type of campaign they want to create and route user to campaignTitle.js
   - Resides on client-side only
   - Communicates the information to the local storage
-- **campaignTitle.html**
-  - This page prompts the user to input a title and and description for the campaign that they are creating
+- **CampaignTitle.js**
+  - This page prompts the user to input a title and and description for the campaign that they are creating and route user to campaignPurpose.js
   - Resides on client-side only
   - Communicates the information to the local storage
-- **campaignPurpose.html**
-  - This page prompts the user to input the purpose of the campaign that they are creating
+- **CampaignPurpose.js**
+  - This page prompts the user to input the purpose of the campaign that they are creating and route route user to campaignDetails.js
   - Resides on client-side only
   - Communicates the information to the local storage
-- **campaignDetails.html**
+- **CampaignDetails.js**
   - This page prompts the user to input additional details of the campaign such as location, upload a photograph
   - Resides on client-side only
   - Communicates with the local storage by extracting the stored information and store them into web SQL
-- **campaignsBrowsing.html**
+- **CampaignsBrowsing.js**
   - This page displays all available campaigns in card views
   - Resides on client-side only
   - Communicates with web SQL
-- **campaign.html**
+- **Campaign.js**
   - This page displays information of a specific campaign
   - Resides on client-side only
-  - This view communicates with the local variable storage
+  - This view communicates with web SQL
+- **Footer**
+  - This component displays contact information.
+  - Resides on client-side only
+  - Does not communicate with other components
+
+
 
 #### Model:
 Javascript, WebSQL
@@ -47,20 +53,20 @@ Javascript, WebSQL
 
 
 #### Controller:
-HTML, Javascript,  WebSQL
-- **Next button in campaignType.html**
-  - This button stores the user input and saves it to localStorage in Browser
+HTML, Javascript,  WebSQL, React
+- **Next button in campaignType.js**
+  - This button stores the user input and saves it to localStorage in Browser and route user to campaignTitle.js
   - Resides on client-side only
   - Communicates with localstorage in browser
-- **Next button in campaignTitle.html**
-  - This button stores the user input and saves it to localStorage in Browser
+- **Next button in campaignTitle.js**
+  - This button stores the user input and saves it to localStorage in Browser and route user to campaignPurpose.js
   - Resides on client-side only
   - Communicates with localstorage in browser
-- **Next button in campaignPurpose.html**
-  - This button stores the user input and saves it to localStorage in Browser
+- **Next button in campaignPurpose.js**
+  - This button stores the user input and saves it to localStorage in Browser and route user to campaignDetails.js
   - Resides on client-side only
   - Communicates with localstorage in browser
-- **Submit button in campaignDetails.html**
+- **Submit button in campaignDetails.js**
   - This button stores the user input and the image that they upload and saves it to localStorage in Browser
   - Resides on client-side only
   - Communicates with localstorage in browser
