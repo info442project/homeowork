@@ -1,35 +1,21 @@
-### Company Name:
-_**Donaid**_
+# React Portfolio Template
+Minimal Portfolio template for Developers/Designers built with React. Use it to showcase your work, testimonials and other information to clients.
 
-### Mission statement:
-"Empowering communities to show care for their own"
+# Preview -
+![React App](https://user-images.githubusercontent.com/16558205/78119338-e3a3db80-7425-11ea-81b6-1d3ebc3ab0fe.png)
 
-### Roles:
-- Andre Magallanes (CEO)
-- Wai Kwan Chow (PM)
-- Edward Halim (CO-CDO)
-- Wang Yuchen (CTO)
-- Sulekha(CO-CDO)
+## The Data can be customised in the src/yourdata.js
+This repo contains an easy-to-customize personal portfolio template that was created with React. It is lightweight and fully responsive, as well as comes with the Awesome Animations.
 
-### Stakeholders:
-1. Health care workers
-2. facilities
-3. professionals Local businesses Seattlites
-
-### Problem description:
-During this COVID-19 there are shortages of masks, gloves, food, and other essential supplies for healthcare workers. There is no platform where individuals or small businesses can start a campaign to support frontline healthcare workers and hospitals. Many of those who want to contribute either can’t leave their homes, don’t know how to help, and want to make a difference in their own communities.
-
-### Problem statement:
-How might local seattleite donors increase donation quantity and quality to healthcare professionals in order to show recognition and gratitude to local healthcare workers.
-
-
-## Research:
-
-- https://www.forbes.com/sites/kristengerencher/2020/04/01/how-to-donate-spare-medical-supplies-for-healthcare-workers/#4bb3339c3c4a
-- https://hypebeast.com/2020/4/brooks-running-shoe-donation-program-healthcare-workers
-- https://www.popsci.com/story/diy/covid-coronavirus-hospital-donations/
-- https://thecity.nyc/2020/03/how-can-i-donate-supplies-to-new-york-hospitals-in-need.html
-- https://www.today.com/health/how-help-during-coronavirus-ways-support-health-care-workers-t176257
-- https://fundly.com/
-- https://www.causes.com/
-- https://startsomegood.com/
+## Features
+ - Production Ready
+ - Fully Responsive
+ - Easy To Customize and Personalise
+ - Minimal & Modern Design
+ 
+ 
+## How to use
+ - 1.Clone/Download the repo. 
+ - 2.Run npm install or yarn install. 
+ - 3.Change the values in src/yourdata.js to suit your use-case. 
+ - 4.Run npm start or yarn start to start the local dev server port 3000.(http://localhost:3000).
