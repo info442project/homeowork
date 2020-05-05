@@ -49,6 +49,12 @@ a{
   font-size: 1rem;
 }
 
+.btnHome {
+  position: relative;
+  right: 850px;
+}
+
+
 /* Home */
 .home_container{
   display: flex;
@@ -88,7 +94,7 @@ a{
 }
 
 
-/* Work */
+/* CampaignBrowsing */
 .work_container{
     display: flex;
     flex-direction: column;
@@ -114,7 +120,7 @@ a{
   font-size: 1.2rem;
 }
 
-/* Contact */
+/* Footer */
 
 .contact_container{
   display: flex;
@@ -156,7 +162,7 @@ a{
 }
 
 
-/* About */
+/* CampaignType */
 
 .about_container{
   display: flex;
@@ -254,7 +260,7 @@ a{
 }
 
 
-/* Contact */
+/* Footer */
 
 .contact_container {
   top: 10rem;

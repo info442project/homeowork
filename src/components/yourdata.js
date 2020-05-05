@@ -5,7 +5,7 @@ export default {
   name: "Donaid",
 
   //Contact Email
-  contactEmail: "hello@donaid.com",
+  contactEmail: "Info@donaid.com",
 
   // Landing Page Name
   landingPageName: "Donaid",

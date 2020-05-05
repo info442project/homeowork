@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header';
 import data from './yourdata';
 
-const About = () => {
+const CampaignType = () => {
   return (
     <div>
       <Header name={data.name} contactEmail={data.contactEmail}></Header>
@@ -19,4 +19,4 @@ const About = () => {
     </div>
   );
 }
-export default About;
+export default CampaignType;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Work = ({projects}) =>{
+const CampaignBrowsing = ({projects}) =>{
     return(
         <div className="work_container">
             <h1>Campaigns</h1>
@@ -22,4 +22,4 @@ const Work = ({projects}) =>{
     )
 }
 
-export default Work
+export default CampaignBrowsing

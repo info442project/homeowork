@@ -1,10 +1,10 @@
 ## Homework 4: Architecture
 
-All views are located under info442project/homeowork/src
+All views are located under info442project/homeowork/src/components
 
 #### Views:
 HTML, Javascript,  WebSQL, React
-- **Navbar**
+- **Header.js**
   - This components ontains the logo branding image, and directs users to the other html files
   - Resides on the client side only
   - Does not communicate with other controllers

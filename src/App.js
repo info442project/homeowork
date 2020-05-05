@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import About from './components/About';
-import Landing from './components/Landing';
+import LandingPage from './components/LandingPage';
+import CampaignType from './components/CampaignType';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/about">
-        <About></About>
+        <CampaignType></CampaignType>
         </Route>
         <Route path="/" exact>
-        <Landing></Landing>
+        <LandingPage></LandingPage>
         </Route>
       </Switch>
     </BrowserRouter>
