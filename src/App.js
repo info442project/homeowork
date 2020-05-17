@@ -8,10 +8,10 @@ function App() {
   return (
     <BrowserRouter basename={window.location.pathname || ''}>
       <Switch>
-        <Route path="/about">
+        {/* <Route exact path="/about">
         <CampaignType></CampaignType>
-        </Route>
-        <Route path="/" exact>
+        </Route> */}
+        <Route exact path="/">
         <LandingPage></LandingPage>
         </Route>
       </Switch>
