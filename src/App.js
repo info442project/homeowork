@@ -6,7 +6,7 @@ import CampaignType from './components/CampaignType';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/about">
         <CampaignType></CampaignType>
