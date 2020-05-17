@@ -1,35 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
-
+import React from 'react';
+import { Link } from 'react-router-dom'
 const Header = ({ name, contactEmail }) => {
-  return (
-    <div>
-      <div className="header_container">
-        <Link to="/">
-          <h1>{name}.</h1>
-        </Link>
-        <nav>
-          <ul>
-            <li>
-              <a href="/" className="btnHome">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/" className="btnBrowse">
-                Browse
-              </a>
-            </li>
-            <button>
-              <li>
-                <Link to="/create_campaign">Create Campaign</Link>
-              </li>
-            </button>
-          </ul>
-        </nav>
+    return (
+        <div>
+            <div className="header_container">
+                <Link to="/"><h1>{name}.</h1></Link>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/" className="btnHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="/" className="btnBrowse">Browse</a>
+                        </li>
+                        <button>
+                            <li><Link to="/about">Create Campaign</Link></li>
 
-        {/* <nav className="navbar navbar-expand-lg navbar-light">
+                        </button>
+
+                    </ul>
+                </nav>
+                
+                {/* <nav className="navbar navbar-expand-lg navbar-light">
                     <a className="navbar-brand" href="/">
                         <img className="navPic" src="./img/Donaid_Logo.png" width="50" height="50" className="d-inline-block align-top" alt=""></img>
                         <span className="navBrand">Donaid</span>
@@ -49,9 +41,9 @@ const Header = ({ name, contactEmail }) => {
                         </form>
                     </div>
                  </nav> */}
-      </div>
-    </div>
-  );
-};
+             </div>
+         </div>
+    )
+}
 
-export default Header;
+export default Header
