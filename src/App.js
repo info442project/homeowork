@@ -1,18 +1,26 @@
-import React from 'react';
-import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import LandingPage from './components/LandingPage';
-import CampaignType from './components/CampaignType';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import CampaignType from "./components/CampaignType";
+import CampaignTitle from "./components/CampaignTitle";
+import CampaignPurpose from "./components/CampaignPurpose";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/about">
-        <CampaignType></CampaignType>
+        <Route path="/campaign_type">
+          <CampaignType></CampaignType>
+        </Route>
+        <Route path="/campaign_title">
+          <CampaignTitle></CampaignTitle>
+        </Route>
+        <Route path="/campaign_purpose">
+          <CampaignPurpose></CampaignPurpose>
         </Route>
         <Route path="/" exact>
-        <LandingPage></LandingPage>
+          <LandingPage></LandingPage>
         </Route>
       </Switch>
     </BrowserRouter>
