@@ -8,8 +8,9 @@ import CampaignPurpose from "./components/CampaignPurpose";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={window.location.pathname || ''}>
       <Switch>
+<<<<<<< HEAD
         <Route path="/campaign_type">
           <CampaignType></CampaignType>
         </Route>
@@ -21,6 +22,13 @@ function App() {
         </Route>
         <Route path="/" exact>
           <LandingPage></LandingPage>
+=======
+        {/* <Route exact path="/about">
+        <CampaignType></CampaignType>
+        </Route> */}
+        <Route exact path="/">
+        <LandingPage></LandingPage>
+>>>>>>> 66b98b40b345231f7b92b8a95c6f14a12e983f0f
         </Route>
       </Switch>
     </BrowserRouter>
