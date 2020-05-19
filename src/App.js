@@ -22,6 +22,11 @@ function App() {
         <Route path="/" exact>
           <LandingPage></LandingPage>
         </Route>
+        {/* <Route exact path="/about">
+        <CampaignType></CampaignType>
+        </Route> */}
+        {/* <Route exact path="/">
+        <LandingPage></LandingPage> */}
       </Switch>
     </BrowserRouter>
   );
