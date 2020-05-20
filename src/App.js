@@ -5,6 +5,8 @@ import LandingPage from "./components/LandingPage";
 import CampaignType from "./components/CampaignType";
 import CampaignTitle from "./components/CampaignTitle";
 import CampaignPurpose from "./components/CampaignPurpose";
+import CampaignBrowsing from "./components/CampaignBrowsing";
+import Campaign from "./components/Campaign";
 
 function App() {
   return (
@@ -21,6 +23,12 @@ function App() {
         </Route>
         <Route path="/" exact>
           <LandingPage></LandingPage>
+        </Route>
+        <Route path="/campaign_browsing">
+          <CampaignBrowsing></CampaignBrowsing>
+        </Route>
+        <Route path="/campaign_information">
+          <Campaign></Campaign>
         </Route>
         {/* <Route exact path="/about">
         <CampaignType></CampaignType>

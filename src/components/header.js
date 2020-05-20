@@ -15,9 +15,9 @@ const Header = ({ name, contactEmail }) => {
               </a>
             </li>
             <li>
-              <a href="/" className="btnBrowse">
+              <Link className="btnBrowse" to="/campaign_browsing">
                 Browse
-              </a>
+              </Link>
             </li>
             <button>
               <li>
