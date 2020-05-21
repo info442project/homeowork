@@ -7,6 +7,7 @@ import CampaignTitle from "./components/CampaignTitle";
 import CampaignPurpose from "./components/CampaignPurpose";
 import CampaignBrowsing from "./components/CampaignBrowsing";
 import Campaign from "./components/Campaign";
+import CampaignDetails from "./components/CampaignDetails";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/campaign_purpose">
           <CampaignPurpose></CampaignPurpose>
+        </Route>
+        <Route path="/campaign_details">
+          <CampaignDetails></CampaignDetails>
         </Route>
         <Route path="/" exact>
           <LandingPage></LandingPage>
