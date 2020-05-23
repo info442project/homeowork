@@ -11,7 +11,7 @@
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "homepage": "https://info442project.github.io/homeowork/"
+    "homepage": "https://info442project.github.io/homeowork"
   },
   "scripts": {
     "start": "react-scripts start",
