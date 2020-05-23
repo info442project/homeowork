@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&display=swap");
 
-body{
+body {
   display: flex;
   align-content: center;
   justify-content: center;
   background: white;
   font-size: 10px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   color: white;
 }
 .App {
@@ -16,34 +16,33 @@ body{
   flex-direction: column;
 }
 
-a{
-    text-decoration: none;
-    color: white;
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Header */
 
-.header_container{
+.header_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   width: 80vw;
   top: 2rem;
   position: relative;
 }
-.header_container h1{
+.header_container h1 {
   font-size: 3rem;
   color: black;
 }
-.header_container ul{
+.header_container ul {
   list-style: none;
 }
-.header_container ul li{
+.header_container ul li {
   display: inline-block;
-
 }
-.header_container ul li a{
+.header_container ul li a {
   text-decoration: none;
   color: black;
   font-size: 1rem;
@@ -51,146 +50,280 @@ a{
 
 .btnHome {
   position: relative;
-  right: 850px;
+  right: 600px;
+}
+.btnBrowse{
+  position: relative;
+  right: 540px;
 }
 
-
 /* Home */
-.home_container{
+.home_container {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   position: relative;
   top: 5rem;
 }
 
-.home_container .home_head_wrapper{
+.home_container .home_head_wrapper {
   position: relative;
-  top:2rem;
+  top: 2rem;
   display: flex;
   flex-direction: column;
   width: 40vw;
 }
-.home_container .home_head_wrapper h1{
+.home_container .home_head_wrapper h1 {
   font-size: 4.5rem;
   font-family: "Montserrat";
   color: black;
 }
-.home_container .home_head_wrapper h1 span{
-  color:#F4D03F;
+.home_container .home_head_wrapper h1 span {
+  color: #f4d03f;
 }
-.home_container .home_head_wrapper p{
+.home_container .home_head_wrapper p {
   position: relative;
-  top:-4rem;
+  top: -4rem;
   font-size: 22px;
   color: black;
   opacity: 0.5;
 }
-.home_container .image_container img{
+.home_container .image_container img {
   /* position: relative; */
   height: 30rem;
   width: 20rem;
-  top:2rem;
+  top: 2rem;
 }
-
 
 /* CampaignBrowsing */
-.work_container{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 5rem;
-    width: 80vw;
+.work_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 5rem;
+  width: 80vw;
 }
-.work_container h1{
+.work_container h1 {
   font-size: 5rem;
   color: black;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
-.work_container .projects_container{
+.work_container .projects_container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
-.work_container .projects_container img{
+.work_container .projects_container img {
   height: 20rem;
   width: 20rem;
 }
-.work_container .projects_container .title{
+.work_container .projects_container .title {
   font-size: 1.2rem;
 }
 
 /* Footer */
 
-.contact_container{
+.contact_container {
   display: flex;
   flex-direction: column;
   position: relative;
-  top:20rem;
+  top: 20rem;
 }
-.contact_container h1{
+.contact_container h1 {
   font-size: 2rem;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding-bottom: 2rem;
   color: black;
 }
-.contact_container p{
+.contact_container p {
   width: 50vw;
   font-size: 2rem;
   position: relative;
-  top:-6rem;
+  top: -6rem;
   opacity: 0.4;
 }
-.contact_container .email_link{
+.contact_container .email_link {
   font-size: 15px;
   color: black;
   position: relative;
-  top:-4rem;
+  top: -4rem;
 }
 
-.contact_container ul{
+.contact_container ul {
   list-style-type: none;
 }
-.contact_container li{
+.contact_container li {
   display: inline;
   padding-right: 3rem;
 }
-.contact_container li a{
+.contact_container li a {
   color: black;
   text-decoration: none;
   font-size: 20px;
 }
 
-
 /* CampaignType */
 
-.about_container{
+.about_container {
   display: flex;
   flex-direction: column;
   width: 80vw;
   justify-content: center;
   position: relative;
-  top:10rem;
+  top: 0rem;
 }
-.about_container h1{
-  font-size: 5rem;
-  font-family: 'Montserrat';
+.about_container h1 {
+  font-size: 4rem;
+  font-family: "Montserrat";
+  color: black;
+  margin-top: 8rem;
 }
-.about_container p{
+
+.about_container h2 {
+  font-size: 1rem;
+  font-family: "Montserrat";
+  color: grey;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+.about_container .cards h1 {
+  font-size: 2rem;
+  font-family: "Montserrat";
+  color: black;
+  margin-top: 8rem;
+}
+
+.about_container p {
   position: relative;
-  top:-2rem;
+  top: -1rem;
   font-size: 1.6rem;
   width: 60vw;
   opacity: 0.4;
-}
-.about_container .about_contact{
-  position: relative;
-  top:-20rem;
+  color: black;
 }
 
+.about_container .titleP p {
+  position: relative;
+  top: -1rem;
+  font-size: 1.6rem;
+  width: 60vw;
+  opacity: 0.4;
+  color: black;
+}
+
+.about_container list {
+  position: relative;
+  top: -1rem;
+  font-size: 1.6rem;
+  width: 60vw;
+  opacity: 0.4;
+  color: black;
+  list-style-type: none;
+}
+#next_button {
+  float: right;
+  margin-right: 0rem;
+}
+
+.about_container .about_contact {
+  position: relative;
+  top: -20rem;
+}
+
+#campaigntypes {
+  width: 20rem;
+  cursor: pointer;
+}
+
+/* Card */
+.card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: #fff;
+  margin: 20px 15px;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Selectable */
+.card .selectable {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 4px solid transparent;
+}
+.card .selectable .check {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+}
+.card .selectable .check:before {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  content: "";
+  border: 20px solid;
+  border-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.card .selectable .check .checkmark {
+  display: block;
+  font: 20px sans-serif;
+  line-height: 20px;
+  text-align: center;
+  color: transparent;
+}
+.card .selectable.selected {
+  border-color: #44aadd;
+}
+.card .selectable.selected .check:before {
+  border-color: #44aadd #44aadd rgba(0, 0, 255, 0) rgba(255, 0, 0, 0);
+}
+.card .selectable.selected .check .checkmark {
+  color: #fff;
+}
+
+.content {
+  padding: 20px;
+}
+.content .title,
+.content .description {
+  margin: 0;
+  padding: 4px;
+}
+
+.column > .title {
+  text-align: center;
+}
+
+button.card {
+  display: block;
+  cursor: pointer;
+  width: 180px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 16px;
+  border-color: transparent;
+  border-radius: 10px;
+  background: #44aadd !important;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  outline: none;
+}
+button.card:focus {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+/*-----------------------------------------*/
 
 @media only screen and (max-width: 600px) {
-  body{
+  body {
     font-size: 2px;
   }
   /* Header */
@@ -203,111 +336,6 @@ a{
   .header_container h1 {
     font-size: 1rem;
   }
-
-
-  .header_container ul li {
-    padding-right: 1rem;
-  }
-
-  /* Home */
-
-.home_container {
-  top: 2rem;
-}
-
-.home_container .home_head_wrapper {
-  top: 1.5rem;
-  width: 60vw;
-}
-
-.home_container .home_head_wrapper h1 {
-  font-size: 1.2rem;
-}
-
-
-.home_container .home_head_wrapper p {
-  top: 0rem;
-  font-size: 0.7rem;
-}
-
-.home_container .image_container img {
-  height: 10rem;
-  width: 8rem;
-  top: 2rem;
-}
-
-/* Work */
-.work_container {
-  top: 10rem;
-  width: 80vw;
-}
-
-.work_container h1 {
-  font-size: 2rem;
-}
-
-.work_container .projects_container {
-  grid-gap: 0.2rem;
-}
-
-.work_container .projects_container img {
-  height: 8rem;
-  width: 8rem;
-}
-
-.work_container .projects_container .title {
-  font-size: 0.8rem;
-}
-
-
-/* Footer */
-
-.contact_container {
-  top: 10rem;
-}
-
-.contact_container h1 {
-  font-size: 4rem;
-}
-
-.contact_container p {
-  font-size: 0.6rem;
-  top: -1rem;
-}
-
-.contact_container .email_link {
-  font-size: 1rem;
-  top: 0rem;
-}
-
-.contact_container li {
-  padding-right: 1rem;
-}
-
-.contact_container li a {
-  font-size: 0.5rem;
-}
-
-
-}
-
-
-@media only screen and (min-width: 600px) and (max-width:800px){
-  body {
-    font-size: 2px;
-  }
-
-  /* Header */
-
-  .header_container {
-    width: 80vw;
-    top: 2rem;
-  }
-
-  .header_container h1 {
-    font-size: 1rem;
-  }
-
 
   .header_container ul li {
     padding-right: 1rem;
@@ -316,7 +344,7 @@ a{
   /* Home */
 
   .home_container {
-    top: 6rem;
+    top: 2rem;
   }
 
   .home_container .home_head_wrapper {
@@ -327,7 +355,6 @@ a{
   .home_container .home_head_wrapper h1 {
     font-size: 1.2rem;
   }
-
 
   .home_container .home_head_wrapper p {
     top: 0rem;
@@ -363,6 +390,103 @@ a{
     font-size: 0.8rem;
   }
 
+  /* Footer */
+
+  .contact_container {
+    top: 10rem;
+  }
+
+  .contact_container h1 {
+    font-size: 4rem;
+  }
+
+  .contact_container p {
+    font-size: 0.6rem;
+    top: -1rem;
+  }
+
+  .contact_container .email_link {
+    font-size: 1rem;
+    top: 0rem;
+  }
+
+  .contact_container li {
+    padding-right: 1rem;
+  }
+
+  .contact_container li a {
+    font-size: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  body {
+    font-size: 2px;
+  }
+
+  /* Header */
+
+  .header_container {
+    width: 80vw;
+    top: 2rem;
+  }
+
+  .header_container h1 {
+    font-size: 1rem;
+  }
+
+  .header_container ul li {
+    padding-right: 1rem;
+  }
+
+  /* Home */
+
+  .home_container {
+    top: 6rem;
+  }
+
+  .home_container .home_head_wrapper {
+    top: 1.5rem;
+    width: 60vw;
+  }
+
+  .home_container .home_head_wrapper h1 {
+    font-size: 1.2rem;
+  }
+
+  .home_container .home_head_wrapper p {
+    top: 0rem;
+    font-size: 0.7rem;
+  }
+
+  .home_container .image_container img {
+    height: 10rem;
+    width: 8rem;
+    top: 2rem;
+  }
+
+  /* Work */
+  .work_container {
+    top: 10rem;
+    width: 80vw;
+  }
+
+  .work_container h1 {
+    font-size: 2rem;
+  }
+
+  .work_container .projects_container {
+    grid-gap: 0.2rem;
+  }
+
+  .work_container .projects_container img {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .work_container .projects_container .title {
+    font-size: 0.8rem;
+  }
 
   /* Contact */
 
@@ -391,7 +515,4 @@ a{
   .contact_container li a {
     font-size: 0.5rem;
   }
-
-
 }
-
