@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Card extends Component {
     render() {
         return (
-            <div className="card">
+            <div className="card" style={{display: "inline-block"}}>
                 <div className="header">
                     <h6 className="title">
                         {this.props.title}

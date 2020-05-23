@@ -58,7 +58,8 @@ class EssayForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
+        alert('An description was submitted: ' + this.state.value);
+        localStorage.setItem("Purpose", this.state.value);
         // event.preventDefault();
     }
 
@@ -89,7 +90,8 @@ class NameForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('Amount was submitted: ' + this.state.value);
+        localStorage.setItem("Number", this.state.value);
         // event.preventDefault();
     }
 

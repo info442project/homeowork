@@ -49,6 +49,7 @@ class NameForm extends React.Component {
 
   handleSubmit(event) {
     alert("A name was submitted: " + this.state.value);
+    localStorage.setItem("Title", this.state.value);
   }
 
   render() {

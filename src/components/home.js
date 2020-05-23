@@ -9,6 +9,8 @@ const Home = ({name, paragraph, authorImage})=>{
             <h1>Helping the<br/><span>community</span></h1>
             <br></br>
             <br></br>
+            <br></br>
+            <br></br>
             <p>{paragraph}</p>
             </div>
             <div className="image_container">

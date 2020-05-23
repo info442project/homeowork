@@ -132,7 +132,17 @@ class Example extends React.Component {
 
   //this will need to be worked on in the backend right now it doesnt work.
   submit() {
-    window.alert("Selected: " /* + this.state.selected*/);
+  
+    if (this.state.selected === 0) {
+      localStorage.setItem("Type", "Money");
+      window.alert("Selected: Money");
+    } else if (this.state.selected === 1) {
+      localStorage.setItem("Type", "Supplies");
+      window.alert("Selected: Supplies");
+    } else if (this.state.selected === 2) {
+      localStorage.setItem("Type", "Human Resources");
+      window.alert("Selected: Human Resources");
+    }
   }
 
   render() {

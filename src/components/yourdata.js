@@ -15,7 +15,7 @@ export default {
     "Our solution is to connect those who want to donate to local health care workers. This can include anything from collecting surgical masks and then donating them to a local hospital, or collecting funds for good cause.",
 
   // Landing Page Image (replace - root/public/assets/photo.jpg)
-  landingPageImage: "assets/team.svg",
+  landingPageImage: "./create.png",
 
   // Change Projects Here
   projects: [

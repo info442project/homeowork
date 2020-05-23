@@ -7,12 +7,14 @@ import Card from './Card/Card.js';
 import { Row, Col, Dropdown } from "react-bootstrap";
 import create from "../img/create.png";
 import browse from "../img/browse.png";
+import team from "../img/Team.svg"
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
+
   return (<div className="App">
     <Header name={data.name} contactEmail={data.contactEmail}></Header>
-    <Home name={data.landingPageName} paragraph={data.landingPagePara} authorImage={data.landingPageImage}></Home>
+    <Home name={data.landingPageName} paragraph={data.landingPagePara} authorImage={team}></Home>
     <div className="get-started">
       <h4 style={{ textAlign: "center", marginTop: "25px" }}>Get Started Now</h4>
       <Row>
