@@ -5,7 +5,6 @@ import data from './yourdata';
 import Card from './Card/Card.js';
 import { Link } from "react-router-dom";
 import { Row, Col, Dropdown } from "react-bootstrap";
-import background from "../img/sch.png";
 // const CampaignBrowsing = ({projects}) =>{
 //     return(
 //         <div className="work_container">
@@ -300,8 +299,13 @@ function select(mydb) {
                     Email: row.Email,
                     Number: row.Number,
                     Date: row.Date,
-                    index: i  
+                    index: i,
+                    donation: 0 
                 })
+                var target = JSON.parse(localStorage.getItem("original_cards"))
+                if (target && target.length > i) {
+                    temp[i].donation = target[i].donation
+                }
             }
             localStorage.setItem("original_cards", JSON.stringify(temp))
             localStorage.setItem("cards", JSON.stringify(temp))

@@ -10,79 +10,107 @@ import { Button } from "react-bootstrap";
 import ImageUploading from "react-images-uploading";
 
 
-const CampaignDetails = (props)=>{
-    console.log(props.db)
-    return (
-        <div>
-        <Header name={data.name} contactEmail={data.contactEmail}></Header>
-        <div className="about_container">
-            <h1>Add Details</h1>
-            <p>* required information</p>
-            <h2>
-                More information is always better
-            </h2>
-            <h1>Location</h1>
-            <LocationForm>Seattle, WA</LocationForm>
-            <br/>
+class CampaignDetails extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            location: '',
+            email: "",
+            phone: "",
+            image: ""
+        };
+    }
 
-            <h1>Contact Information</h1>
-            <EmailForm>email</EmailForm>
-            <PhoneForm>phone number</PhoneForm>
+    updateLocation = (result) => {
+        this.setState({
+            location: result
+        })
+    }
 
-            <h1>Add Photos</h1>
-            <PhotoUpload></PhotoUpload>
-            <br/>
-            <br/>
-            <Submission db = {props.db}></Submission>
+    updateEmail = (result) => {
+        this.setState({
+            email: result
+        })
+    }
+
+    updateNumber = (result) => {
+        this.setState({
+            number: result
+        })
+    }
+
+    uploadInfo = () => {
+        localStorage.setItem("Location", this.state.location)
+        localStorage.setItem("Email", this.state.email)
+        localStorage.setItem("Phone", this.state.number)
+    }
+
+    render() {
+        return (
+            <div>
+            <Header name={data.name} contactEmail={data.contactEmail}></Header>
+            <div className="about_container">
+                <h1>Add Details</h1>
+                <p>* required information</p>
+                <h2>
+                    More information is always better
+                </h2>
+                <h1>Location</h1>
+                <LocationForm onChange={(result) => {this.updateLocation(result)}}></LocationForm>
+                <br/>
+
+                <h1>Contact Information</h1>
+                <EmailForm onChange={(result) => {this.updateEmail(result)}}></EmailForm>
+                <br/>
+                <PhoneForm onChange={(result) => {this.updateNumber(result)}}></PhoneForm>
+
+                <h1>Add Photos</h1>
+                <PhotoUpload></PhotoUpload>
+                <br/>
+                <br/>
+                <Submission db = {this.props.db}
+                            onSubmit = {() => {this.uploadInfo()}}></Submission>
+            </div>
+
+            <Footer
+                contactEmail={data.contactEmail}
+                socialLinks={data.social}
+            ></Footer>
         </div>
-
-        <Footer
-            contactEmail={data.contactEmail}
-            socialLinks={data.social}
-        ></Footer>
-    </div>
-    )
+        )
+    }
 }
 
 
 class LocationForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
+        // this.state = { value: "" };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        // this.setState({ value: event.target.value });
+        this.props.onChange(event.target.value)
     }
 
-    handleSubmit(event) {
-        alert('Location was submitted: ' + this.state.value);
-        localStorage.setItem("Location", this.state.value);
-        // event.preventDefault();
-    }
+    // handleSubmit(event) {
+    //     alert('Location was submitted: ' + this.state.value);
+    //     localStorage.setItem("Location", this.state.value);
+    //     // event.preventDefault();
+    // }
 
     render() {
         return (
             <Form>
                 {" "}
-                onSubmit={this.handleSubmit}
                 <Form.Control
                     type="text"
                     placeholder="Location goes here"
-                    value={this.state.value}
                     onChange={this.handleChange}
                 />
-
-                <Button
-                    id="next_button"
-                    variant="primary"
-                    type="submit"
-                    onClick={(e) => this.handleSubmit()}>
-                    Submit
-                </Button>
             </Form>
         );
     }
@@ -91,41 +119,31 @@ class LocationForm extends React.Component {
 class EmailForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
+        // this.state = { value: "" };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.props.onChange(event.target.value)
     }
 
-    handleSubmit(event) {
-        alert('Email was submitted: ' + this.state.value);
-        localStorage.setItem("Email", this.state.value);
-        // event.preventDefault();
-    }
+    // handleSubmit(event) {
+    //     alert('Email was submitted: ' + this.state.value);
+    //     localStorage.setItem("Email", this.state.value);
+    //     // event.preventDefault();
+    // }
 
     render() {
         return (
             <Form>
                 {" "}
-                onSubmit={this.handleSubmit}
                 <Form.Control
                     type="text"
                     placeholder="Email goes here"
-                    value={this.state.value}
                     onChange={this.handleChange}
                 />
-
-                <Button
-                    id="next_button"
-                    variant="primary"
-                    type="submit"
-                    onClick={(e) => this.handleSubmit()}>
-                    Submit
-                </Button>
             </Form>
         );
     }
@@ -134,41 +152,31 @@ class EmailForm extends React.Component {
 class PhoneForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: "" };
+        // this.state = { value: "" };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.props.onChange(event.target.value)
     }
 
-    handleSubmit(event) {
-        alert('Phone number was submitted: ' + this.state.value);
-        localStorage.setItem("Phone", this.state.value);
-        // event.preventDefault();
-    }
+    // handleSubmit(event) {
+    //     alert('Phone number was submitted: ' + this.state.value);
+    //     localStorage.setItem("Phone", this.state.value);
+    //     // event.preventDefault();
+    // }
 
     render() {
         return (
             <Form>
                 {" "}
-                onSubmit={this.handleSubmit}
                 <Form.Control
                     type="text"
                     placeholder="Phone number goes here"
-                    value={this.state.value}
                     onChange={this.handleChange}
                 />
-
-                <Button
-                    id="next_button"
-                    variant="primary"
-                    type="submit"
-                    onClick={(e) => this.handleSubmit()}>
-                    Submit
-                </Button>
             </Form>
         );
     }
@@ -249,8 +257,10 @@ class PhotoUpload extends React.Component {
     }
 
     handleSubmit(event) {
+        this.props.onSubmit()
         var date = new Date().getFullYear() + "/" + new Date().getMonth() + "/"  + new Date().getDate()
         localStorage.setItem("Date", date)
+        localStorage.setItem("index", 0)
         alert('Campaign successfully created!');
     
         addCampaign(this.props.db) 

@@ -18,13 +18,22 @@ class Campaign extends React.Component {
                        number: campaign.Number,
                        email: campaign.Email,
                        location: campaign.Location,
-                       phone: campaign.Phone };
+                       phone: campaign.Phone,
+                       donation: campaign.donation};
     }
 
     updateDonation = () => {
         this.setState({
-            number: this.state.number + 1
+            donation: this.state.donation + 1
         });
+        var campaigns = JSON.parse(localStorage.getItem("cards"))
+        var theCampaign = campaigns[localStorage.getItem("index")]
+        theCampaign.donation = this.state.donation + 1
+        campaigns[localStorage.getItem("index")] = theCampaign
+        localStorage.setItem("cards", JSON.stringify(campaigns))
+        localStorage.setItem("original_cards", JSON.stringify(campaigns))
+        var currDonation = this.state.donation + 1
+        alert('Congrats! You have contributed to these ' + currDonation + " donations!");
     }
 
     render() {
@@ -38,7 +47,7 @@ class Campaign extends React.Component {
                     </Col>
                     <Col md={5}>
                         <Card
-                            title = {this.state.number + "  donated of 200"}
+                            title = {this.state.donation + " donated of " + this.state.number}
                             content={
                                 <div>
                                     <div className="description">
