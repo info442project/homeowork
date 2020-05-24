@@ -12,9 +12,9 @@
     "service-worker.js": "/service-worker.js",
     "static/css/main.d21f9780.chunk.css.map": "/static/css/main.d21f9780.chunk.css.map",
     "static/js/2.bcbaff48.chunk.js.LICENSE.txt": "/static/js/2.bcbaff48.chunk.js.LICENSE.txt",
-    "static/media/Team.svg": "/static/media/Team.aedbc5d5.svg",
-    "static/media/browse.png": "/static/media/browse.a2dee9f2.png",
-    "static/media/create.png": "/static/media/create.920d8a3a.png"
+    "static/media/Team.svg": "/homeowork/static/media/Team.aedbc5d5.svg",
+    "static/media/browse.png": "/homeowork/static/media/browse.a2dee9f2.png",
+    "static/media/create.png": "/homeowork/static/media/create.920d8a3a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c8b6af16.js",
