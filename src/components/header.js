@@ -9,6 +9,16 @@ const Header = ({ name, contactEmail }) => {
         </Link>
         <nav>
           <ul>
+            <li>
+              <a href="/" className="btnHome">
+                Home
+              </a>
+            </li>
+            <li>
+              <Link className="btnBrowse" to="/campaign_browsing">
+                Browse
+              </Link>
+            </li>
             <button>
               <li>
                 <Link to="/campaign_type">Create Campaign</Link>
