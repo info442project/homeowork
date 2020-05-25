@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import CampaignType from "./components/CampaignType";
 import CampaignTitle from "./components/CampaignTitle";
@@ -35,7 +35,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/campaign_type">
             <CampaignType></CampaignType>
@@ -62,7 +62,7 @@ class App extends React.Component {
           <CampaignType></CampaignType>
           </Route> 
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
