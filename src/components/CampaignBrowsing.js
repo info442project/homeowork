@@ -5,6 +5,7 @@ import data from './yourdata';
 import Card from './Card/Card.js';
 import { Link } from "react-router-dom";
 import { Row, Col, Dropdown } from "react-bootstrap";
+import default_image from "../img/default.svg"
 // const CampaignBrowsing = ({projects}) =>{
 //     return(
 //         <div className="work_container">
@@ -226,16 +227,22 @@ class CardsList extends React.Component {
     render() {
         var elements = []
         var mydb = this.props.db
-
         var element_object = this.props.cards
         var i
+          
         for (i = 0; i < element_object.length; i++) {
             var object = element_object[i]
+            var image
+            if (object.Picture === "empty") {
+                image = default_image
+            } else {
+                image = object.Picture
+            }
             elements.push(<Card 
                 title = {object.Title} 
                 content={
                     <div>
-                        <img src={object.Picture} alt="purpose of campaign"></img>
+                        <img src={image} alt="purpose of campaign"></img>
                         <div className="description">
                             <p>{object.Purpose}</p>
                         </div>

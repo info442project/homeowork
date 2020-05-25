@@ -19,6 +19,10 @@ class CampaignDetails extends React.Component{
             phone: "",
             image: ""
         };
+        localStorage.setItem("Location", "")
+        localStorage.setItem("Email", "")
+        localStorage.setItem("Phone", "")
+        localStorage.setItem("Picture", "")
     }
 
     updateLocation = (result) => {
@@ -292,6 +296,9 @@ class PhotoUpload extends React.Component {
     var purpose = localStorage.getItem("Purpose");
     var location = localStorage.getItem("Location");
     var picture = localStorage.getItem("Picture");
+    if (picture === "") {
+        picture = "empty"
+    }
     var email = localStorage.getItem("Email");
     var number = localStorage.getItem("Number");
     var date = localStorage.getItem("Date");

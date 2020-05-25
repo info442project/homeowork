@@ -8,6 +8,9 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 const CampaignTitle = () => {
+
+  localStorage.setItem("Title", "")
+
   return (
     <div>
       <Header name={data.name} contactEmail={data.contactEmail}></Header>
@@ -37,19 +40,38 @@ const CampaignTitle = () => {
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { 
+      value: "",
+      clickAble: false  
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ 
+      value: event.target.value
+    });
+    if (event.target.value !== "") {
+      this.setState({ 
+        clickAble: true
+      });
+    } else if (event.target.value === "") {
+      this.setState({ 
+        clickAble: false
+      });
+    }
   }
 
-  handleSubmit(event) {
+  handleSubmit() {
     alert("A name was submitted: " + this.state.value);
     localStorage.setItem("Title", this.state.value);
+  }
+
+  handleSubmitNothing(event) {
+    event.preventDefault()
+    window.alert("Must input a title for your campaign");
   }
 
   render() {
@@ -69,16 +91,29 @@ class NameForm extends React.Component {
             This title will appear on your campaign page
           </Form.Text>
         </Form.Group>
-        <Link to="/campaign_purpose">
-          <Button
-            id="next_button"
-            variant="primary"
-            type="submit"
-            onClick={(e) => this.handleSubmit()}
-          >
-            Next
-          </Button>
-        </Link>
+        {
+          this.state.clickAble
+          ? <Link to="/campaign_purpose">
+              <Button
+                id="next_button"
+                variant="primary"
+                type="submit"
+                onClick={() => this.handleSubmit()}
+              >
+                Next
+              </Button>  
+            </Link>
+          : <Link to="/campaign_purpose">
+              <Button
+                id="next_button"
+                variant="primary"
+                type="submit"
+                onClick={(event) => this.handleSubmitNothing(event)}
+              >
+                Next
+              </Button>  
+            </Link>
+        }
       </Form>
     );
   }

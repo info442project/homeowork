@@ -17,6 +17,9 @@ class CampaignPurpose extends React.Component {
             purpose: '',
             number: 0
         };
+
+        localStorage.setItem("Purpose", "")
+        localStorage.setItem("Number", "")
     }
 
     updatePurpose = (result) => {

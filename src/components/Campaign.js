@@ -4,17 +4,25 @@ import Footer from './Footer';
 import data from './yourdata';
 import { Row, Col, Dropdown } from "react-bootstrap";
 import Card from './Card/Card.js';
+import default_image from "../img/default.svg"
 
 class Campaign extends React.Component {
 
     constructor(props) {
         super(props);
         var campaign = JSON.parse(localStorage.getItem("original_cards"))[localStorage.getItem("index")]
+        var image 
+
+        if(campaign.Picture === "empty") {
+            image = default_image
+        } else {
+            image = campaign.Picture
+        }
 
         this.state = { title: campaign.Title,
                        type: campaign.Type,
                        purpose: campaign.Purpose,
-                       picture: campaign.Picture,
+                       picture: image,
                        number: campaign.Number,
                        email: campaign.Email,
                        location: campaign.Location,

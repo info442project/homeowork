@@ -9,6 +9,8 @@ import { Button } from "react-bootstrap";
 // import "/bootstrap/dist/css/bootstrap.css";
 
 const CampaignType = () => {
+  localStorage.setItem("Type", "")
+
   return (
     <div>
       <Header name={data.name} contactEmail={data.contactEmail}></Header>
@@ -124,9 +126,19 @@ class SelectableCardList extends React.Component {
 }
 
 class Example extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: -1,
+      clickAble: false
+    }
+  }
+
   onListChanged(selected) {
     this.setState({
       selected: selected,
+      clickAble: true
     });
   }
 
@@ -142,7 +154,12 @@ class Example extends React.Component {
     } else if (this.state.selected === 2) {
       localStorage.setItem("Type", "Human Resources");
       window.alert("Selected: Human Resources");
-    }
+    } 
+  }
+
+  submitNothing(e) {
+    e.preventDefault()
+    window.alert("Must choose a type");
   }
 
   render() {
@@ -154,15 +171,27 @@ class Example extends React.Component {
           contents={this.props.cardContents}
           onChange={this.onListChanged.bind(this)}
         />
-        <Link to="/campaign_title">
+        {
+          this.state.clickAble
+          ? <Link to="/campaign_title">
+            <Button
+              id="next_button"
+              variant="primary"
+              onClick={(e) => this.submit()}
+            >
+              Next
+            </Button>
+          </Link>
+          : <Link to="/campaign_title">
           <Button
             id="next_button"
             variant="primary"
-            onClick={(e) => this.submit()}
+            onClick={(event) => this.submitNothing(event)}
           >
             Next
           </Button>
         </Link>
+        }     
       </div>
     );
   }
