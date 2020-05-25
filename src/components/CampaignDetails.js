@@ -65,10 +65,11 @@ class CampaignDetails extends React.Component{
                 <PhoneForm onChange={(result) => {this.updateNumber(result)}}></PhoneForm>
 
                 <h1>Add Photos</h1>
+                <p>Max Size 1MB (Or result in creation failure)</p>
                 <PhotoUpload></PhotoUpload>
                 <br/>
                 <br/>
-                <Submission db = {this.props.db}
+                <Submission fireDB = {this.props.fireDB}
                             onSubmit = {() => {this.uploadInfo()}}></Submission>
             </div>
 
@@ -263,7 +264,7 @@ class PhotoUpload extends React.Component {
         localStorage.setItem("index", 0)
         alert('Campaign successfully created!');
     
-        addCampaign(this.props.db) 
+        addCampaign(this.props.fireDB) 
         
     }
 
@@ -283,7 +284,8 @@ class PhotoUpload extends React.Component {
     }
  }
 
- function addCampaign(mydb) {
+ function addCampaign(fireDB) {
+
     var title = localStorage.getItem("Title");
     var type = localStorage.getItem("Type");
     var phone = localStorage.getItem("Phone");
@@ -293,9 +295,29 @@ class PhotoUpload extends React.Component {
     var email = localStorage.getItem("Email");
     var number = localStorage.getItem("Number");
     var date = localStorage.getItem("Date");
-    mydb.transaction(function (t) {
-        t.executeSql("INSERT INTO campaigns (Title, Type, Phone, Purpose, Location, Picture, Email, Number, Date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [title, type, phone, purpose, location, picture, email, number, date]);
+    // mydb.transaction(function (t) {
+    //     t.executeSql("INSERT INTO campaigns (Title, Type, Phone, Purpose, Location, Picture, Email, Number, Date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [title, type, phone, purpose, location, picture, email, number, date]);
+    // });
+    fireDB.collection("campaigns").doc(title).set({
+        Title: title,
+        Type: type,
+        Phone: phone,
+        Purpose: purpose,
+        Location: location,
+        Picture: picture,
+        Email: email,
+        Number: number,
+        Date: date,
+        Donation: 0
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
     });
+    console.log(picture)
+    
 }
 
 export default CampaignDetails

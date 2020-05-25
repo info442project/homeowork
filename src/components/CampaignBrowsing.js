@@ -32,16 +32,10 @@ class CampaignBrowsing extends Component {
     constructor(props) {
         super(props);
 
-        select(this.props.db);
+        select(this.props.fireDB);
         this.state = {
             cards: JSON.parse(localStorage.getItem("cards"))
         };
-    }
-    
-    componentDidMount = () => {
-        this.setState ({
-            cards: JSON.parse(localStorage.getItem("cards"))
-        });
     }
     
     updateCardList = (text) => {
@@ -282,37 +276,65 @@ class ToDetail extends React.Component {
     }
 }
 
-function select(mydb) {
-    mydb.transaction(function (t) {
-        t.executeSql("SELECT * FROM campaigns", [], function (t, results){ 
-            var i
-            var temp = []
-            for (i = 0; i < results.rows.length; i++) {
-                var row = results.rows.item(i);
-                temp.push({
-                    Title: row.Title,
-                    Picture: row.Picture,
-                    Purpose: row.Purpose,
-                    Type: row.Type,
-                    Phone: row.Phone,
-                    Location: row.Location,
-                    Email: row.Email,
-                    Number: row.Number,
-                    Date: row.Date,
-                    index: i,
-                    donation: 0 
-                })
-                var target = JSON.parse(localStorage.getItem("original_cards"))
-                if (target && target.length > i) {
-                    temp[i].donation = target[i].donation
-                }
-            }
-            localStorage.setItem("original_cards", JSON.stringify(temp))
-            localStorage.setItem("cards", JSON.stringify(temp))
-        });
-    });
+function select(fireDB) {
+    // mydb.transaction(function (t) {
+    //     t.executeSql("SELECT * FROM campaigns", [], function (t, results){ 
+    //         var i
+    //         var temp = []
+    //         for (i = 0; i < results.rows.length; i++) {
+    //             var row = results.rows.item(i);
+    //             temp.push({
+    //                 Title: row.Title,
+    //                 Picture: row.Picture,
+    //                 Purpose: row.Purpose,
+    //                 Type: row.Type,
+    //                 Phone: row.Phone,
+    //                 Location: row.Location,
+    //                 Email: row.Email,
+    //                 Number: row.Number,
+    //                 Date: row.Date,
+    //                 index: i,
+    //                 donation: 0 
+    //             })
+    //             var target = JSON.parse(localStorage.getItem("original_cards"))
+    //             if (target && target.length > i) {
+    //                 temp[i].donation = target[i].donation
+    //             }
+    //         }
+    //         localStorage.setItem("original_cards", JSON.stringify(temp))
+    //         localStorage.setItem("cards", JSON.stringify(temp))
+    //     });
+    // });
+    var temp = []
+    getData(fireDB, temp)
 }
 
+async function getData(fireDB, temp) {
+    var i = 0
+    await fireDB.collection("campaigns").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            var campaign = doc.data()
+            temp.push({
+                Title: campaign.Title,
+                Picture: campaign.Picture,
+                Purpose: campaign.Purpose,
+                Type: campaign.Type,
+                Phone: campaign.Phone,
+                Location: campaign.Location,
+                Email: campaign.Email,
+                Number: campaign.Number,
+                Date: campaign.Date,
+                index: i,
+                Donation: campaign.Donation 
+            })
+            i++;
+        });
+    })
+    console.log(temp.length)
+    localStorage.setItem("original_cards", JSON.stringify(temp))
+    localStorage.setItem("cards", JSON.stringify(temp))
+    
+}
 
 
 export default CampaignBrowsing;

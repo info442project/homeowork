@@ -9,7 +9,7 @@ class Campaign extends React.Component {
 
     constructor(props) {
         super(props);
-        var campaign = JSON.parse(localStorage.getItem("cards"))[localStorage.getItem("index")]
+        var campaign = JSON.parse(localStorage.getItem("original_cards"))[localStorage.getItem("index")]
 
         this.state = { title: campaign.Title,
                        type: campaign.Type,
@@ -19,19 +19,20 @@ class Campaign extends React.Component {
                        email: campaign.Email,
                        location: campaign.Location,
                        phone: campaign.Phone,
-                       donation: campaign.donation};
+                       donation: campaign.Donation};
     }
 
     updateDonation = () => {
         this.setState({
             donation: this.state.donation + 1
         });
-        var campaigns = JSON.parse(localStorage.getItem("cards"))
-        var theCampaign = campaigns[localStorage.getItem("index")]
-        theCampaign.donation = this.state.donation + 1
-        campaigns[localStorage.getItem("index")] = theCampaign
-        localStorage.setItem("cards", JSON.stringify(campaigns))
-        localStorage.setItem("original_cards", JSON.stringify(campaigns))
+        // var campaigns = JSON.parse(localStorage.getItem("cards"))
+        // var theCampaign = campaigns[localStorage.getItem("index")]
+        // theCampaign.donation = this.state.donation + 1
+        // campaigns[localStorage.getItem("index")] = theCampaign
+        // localStorage.setItem("cards", JSON.stringify(campaigns))
+        // localStorage.setItem("original_cards", JSON.stringify(campaigns))
+        updateDB(this.props.fireDB, this.state.title, this.state.donation)
         var currDonation = this.state.donation + 1
         alert('Congrats! You have contributed to these ' + currDonation + " donations!");
     }
@@ -77,6 +78,18 @@ class Campaign extends React.Component {
             </div>
         )
     }   
+}
+
+function updateDB(fireDB, title, prev) {
+    fireDB.collection("campaigns").doc(title).update({
+        Donation: prev + 1
+    }).then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
 }
 
 export default Campaign
