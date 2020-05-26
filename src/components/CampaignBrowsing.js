@@ -276,7 +276,7 @@ class ToDetail extends React.Component {
         return (
             <Link to='/campaign_information'
                   onClick= {(e) => this.handleSubmit()}>
-                <a href="/">Learn More</a>
+                <a>Learn More</a>
             </Link>
         )
     }

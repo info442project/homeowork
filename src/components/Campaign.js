@@ -66,7 +66,7 @@ class Campaign extends React.Component {
                                     </div>
                                     <div className="btnDonate" style={{textAlign: "center"}}>
                                         <button onClick={() => {this.updateDonation()}}>
-                                            <a href="/">Donate to Campaign</a>
+                                            <a href="javascript:void(0)">Donate to Campaign</a>
                                         </button>
                                     </div>
                                 </div>
