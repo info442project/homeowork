@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header';
 import Footer from './Footer';
 import data from './yourdata';
-import { Row, Col, Dropdown, ProgressBar } from "react-bootstrap";
+import { Row, Col, ProgressBar } from "react-bootstrap";
 import Card from './Card/Card.js';
 import default_image from "../img/default.svg";
 import user from "../img/person.png";
@@ -54,7 +54,7 @@ class Campaign extends React.Component {
                 <h2 style={{ color: "black", textAlign: "center", marginBottom: "60px", fontWeight: "600" }}>{this.state.title + ": " + this.state.type}</h2>
                 <Row>
                     <Col md={7} style={{textAlign: "center"}}>
-                    <img style={{maxHeight: "500px", maxWidth: "540px"}}src={this.state.picture}></img>
+                    <img style={{maxHeight: "500px", maxWidth: "540px"}}src={this.state.picture} alt="details"></img>
                     </Col>
                     <Col md={5}>
                         <Card
@@ -66,7 +66,7 @@ class Campaign extends React.Component {
                                     </div>
                                     <div className="btnDonate" style={{textAlign: "center"}}>
                                         <button onClick={() => {this.updateDonation()}}>
-                                            <a>Donate to Campaign</a>
+                                            <a href="/">Donate to Campaign</a>
                                         </button>
                                     </div>
                                 </div>

@@ -59,8 +59,9 @@ class SelectableTitleCard extends React.Component {
       <SelectableCard onClick={this.props.onClick} selected={selected}>
         <div className="content">
           <h1 className="title">{title}</h1>
-
-          {/*<p className="description">{description}</p>*/}
+          <br></br>
+          <p className="description"
+             style={{width: 200}}>{description}</p>
         </div>
       </SelectableCard>
     );
@@ -108,9 +109,9 @@ class SelectableCardList extends React.Component {
 
     var content = contents.map((cardContent, i) => {
       var { title, description, selected } = cardContent;
-      var selected = multiple
+      selected = multiple
         ? this.state.selected.indexOf(i) > -1
-        : this.state.selected == i;
+        : this.state.selected === i;
       return (
         <SelectableTitleCard
           key={i}
@@ -121,7 +122,7 @@ class SelectableCardList extends React.Component {
         />
       );
     });
-    return <div class="row">{content}</div>;
+    return <div className="row">{content}</div>;
   }
 }
 
@@ -208,7 +209,7 @@ var teams = [
   },
   {
     title: "Human Resources",
-    description: "I have no idea what this is",
+    description: "Volunteers able to help",
   },
 ];
 

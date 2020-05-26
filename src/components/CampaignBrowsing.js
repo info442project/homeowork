@@ -226,7 +226,6 @@ class DropClick extends React.Component {
 class CardsList extends React.Component {
     render() {
         var elements = []
-        var mydb = this.props.db
         var element_object = this.props.cards
         var i
           
@@ -277,7 +276,7 @@ class ToDetail extends React.Component {
         return (
             <Link to='/campaign_information'
                   onClick= {(e) => this.handleSubmit()}>
-                <a>Learn More</a>
+                <a href="/">Learn More</a>
             </Link>
         )
     }
@@ -337,7 +336,6 @@ async function getData(fireDB, temp) {
             i++;
         });
     })
-    console.log(temp.length)
     localStorage.setItem("original_cards", JSON.stringify(temp))
     localStorage.setItem("cards", JSON.stringify(temp))
     

@@ -10,16 +10,17 @@ import Campaign from "./components/Campaign";
 import CampaignDetails from "./components/CampaignDetails"; 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import { key } from './apiKey.json'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     //var mydb = startDB() 
-    
+
     if (!firebase.apps.length) {
       firebase.initializeApp({
-        apiKey: "AIzaSyBgW25euGpULSICvSS-1EcqDDDVHOVHjNc",
+        apiKey: key,
         authDomain: "donaid-442.firebaseapp.com",
         projectId: "donaid-442"
       });

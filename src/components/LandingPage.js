@@ -4,7 +4,7 @@ import Home from './home';
 import Footer from './Footer';
 import data from './yourdata';
 import Card from './Card/Card.js';
-import { Row, Col, Dropdown } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import create from "../img/create.png";
 import browse from "../img/browse.png";
 import team from "../img/Team.svg"
@@ -25,7 +25,7 @@ const LandingPage = () => {
               title="Create Campaign"
               content={
                 <div className="description">
-                  <img style={{height: "100px", width: "100px", marginLeft: "70px"}}src={create}></img>
+                  <img style={{height: "100px", width: "100px", marginLeft: "70px"}}src={create} alt="create description"></img>
                   <p style={{ fontSize: "14px", color: "#605e5e" }}>Help community by creating a meaningful campaign</p>
                 </div>
               }
@@ -40,7 +40,7 @@ const LandingPage = () => {
               title="Browse Campaign"
               content={
                 <div className="description">
-                  <img style={{height: "100px", width: "100px", marginLeft: "70px"}}src={browse}></img>
+                  <img style={{height: "100px", width: "100px", marginLeft: "70px"}}src={browse} alt="browse description"></img>
                   <p style={{ fontSize: "14px", color: "#605e5e", paddingTop: "20px" }}>Get help from your community</p>
                 </div>
               }
