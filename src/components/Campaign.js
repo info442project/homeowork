@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header';
 import Footer from './Footer';
 import data from './yourdata';
-import { Row, Col, Dropdown } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Card from './Card/Card.js';
 import default_image from "../img/default.svg"
 
@@ -52,7 +52,7 @@ class Campaign extends React.Component {
                 <h4 style={{ textAlign: "center", marginBottom: "40px" }}>{this.state.title + ": " + this.state.type}</h4>
                 <Row>
                     <Col md={7}>
-                    <img style={{maxHeight: "500px", maxWidth: "540px"}}src={this.state.picture}></img>
+                    <img style={{maxHeight: "500px", maxWidth: "540px"}}src={this.state.picture} alt="details"></img>
                     </Col>
                     <Col md={5}>
                         <Card
@@ -64,7 +64,7 @@ class Campaign extends React.Component {
                                     </div>
                                     <div className="btnDonate" style={{textAlign: "center"}}>
                                         <button onClick={() => {this.updateDonation()}}>
-                                            <a>Donate to Campaign</a>
+                                            <a href="/">Donate to Campaign</a>
                                         </button>
                                     </div>
                                 </div>

@@ -242,7 +242,7 @@ class PhotoUpload extends React.Component {
   
               {imageList.map((image) => (
                 <div key={image.key}>
-                  <img src={image.dataURL} />
+                  <img src={image.dataURL}  alt="upload" />
                   <button onClick={image.onUpdate}>Update</button>
                   <button onClick={image.onRemove}>Remove</button>
                 </div>
