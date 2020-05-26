@@ -54,14 +54,14 @@ a {
 
 .header_container .btnHome {
   position: relative;
-  right: 935px;
+  right: 1000%;
   color: #605e5e;
   font-size: 20px;
   font-weight: 600;
 }
 .header_container .btnBrowse{
   position: relative;
-  right: 850px;
+  right: 700%;;
   color: #605e5e;
   font-size: 20px;
   font-weight: 600;
