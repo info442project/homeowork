@@ -38,7 +38,7 @@ class CampaignPurpose extends React.Component {
                 <Header name={data.name} contactEmail={data.contactEmail}></Header>
                 <div className="about_container">
                     <h1>Explain the purpose and goal of the campaign</h1>
-                    <p>* required information</p>
+                    <p style={{marginTop: "10px"}}>* required information</p>
                     <h2>
                         Tip: Write a clear explanation of your purpose of the campaign.
                     </h2>
@@ -73,7 +73,7 @@ class EssayForm extends React.Component {
         return (
             <Form>
                 <TextArea placeholder='Tell us more description' 
-                          style={{ minHeight: 100, width: 500, marginLeft: "5px"}} 
+                          style={{ minHeight: 100, width: 500, marginLeft: "5px", fontSize: "14px"}} 
                           onChange= {(e) => {
                              this.props.onChange(e.target.value)
                           }} />

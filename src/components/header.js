@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import arrow from "../img/arrow.png";
 const Header = ({ name, contactEmail }) => {
   return (
-    <div>
+    <div className="top_nav" style={{height: "150px", background: "linear-gradient(rgba(213, 232, 246, 1), rgba(213, 232, 246, 0))", marginRight: "-170px", marginLeft: "-170px" }}>
       <div className="header_container">
         <Link to="/">
           <h1>{name}.</h1>
         </Link>
         <nav>
           <ul>
-            <li>
+            <li style={{paddingTop: "30px"}}>
               <a href="/" className="btnHome">
                 Home
               </a>
@@ -19,11 +21,14 @@ const Header = ({ name, contactEmail }) => {
                 Browse
               </Link>
             </li>
-            <button>
-              <li>
-                <Link to="/campaign_type">Create Campaign</Link>
-              </li>
-            </button>
+            <li>
+              <Link to="/campaign_type">
+                <Button className="btnCreate" style={{height: "50px", width: "200px"}}>
+                  Create Campaign
+                  <img src={arrow}></img>
+              </Button>
+              </Link>
+            </li>
           </ul>
         </nav>
 

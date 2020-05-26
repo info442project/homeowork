@@ -10,7 +10,7 @@ import { Button } from "react-bootstrap";
 import ImageUploading from "react-images-uploading";
 
 
-class CampaignDetails extends React.Component{
+class CampaignDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -52,36 +52,38 @@ class CampaignDetails extends React.Component{
     render() {
         return (
             <div>
-            <Header name={data.name} contactEmail={data.contactEmail}></Header>
-            <div className="about_container">
-                <h1>Add Details</h1>
-                <p>* required information</p>
-                <h2>
-                    More information is always better
-                </h2>
-                <h1>Location</h1>
-                <LocationForm onChange={(result) => {this.updateLocation(result)}}></LocationForm>
-                <br/>
+                <Header name={data.name} contactEmail={data.contactEmail}></Header>
+                <div className="about_container campaign_details">
+                    <h1>Add Details</h1>
+                    <p style={{ marginTop: "10px" }}>* required information</p>
+                    <h2 style={{marginBottom: "0"}}>
+                        More information is always better
+                    </h2>
+                    <div className="content">
+                        <h3>Location</h3>
+                        <LocationForm onChange={(result) => { this.updateLocation(result) }}></LocationForm>
+                        <br />
 
-                <h1>Contact Information</h1>
-                <EmailForm onChange={(result) => {this.updateEmail(result)}}></EmailForm>
-                <br/>
-                <PhoneForm onChange={(result) => {this.updateNumber(result)}}></PhoneForm>
+                        <h3>Contact Information</h3>
+                        <EmailForm onChange={(result) => { this.updateEmail(result) }}></EmailForm>
+                        <br />
+                        <PhoneForm onChange={(result) => { this.updateNumber(result) }}></PhoneForm>
 
-                <h1>Add Photos</h1>
-                <p>Max Size 1MB (Or result in creation failure)</p>
-                <PhotoUpload></PhotoUpload>
-                <br/>
-                <br/>
-                <Submission fireDB = {this.props.fireDB}
-                            onSubmit = {() => {this.uploadInfo()}}></Submission>
+                        <h3>Add Photos</h3>
+                        <p style={{ fontSize: "20px" }}>Max Size 1MB (Or result in creation failure)</p>
+                        <PhotoUpload></PhotoUpload>
+                        <br />
+                        <br />
+                    </div>
+                    <Submission fireDB={this.props.fireDB}
+                        onSubmit={() => { this.uploadInfo() }}></Submission>
+                </div>
+
+                <Footer
+                    contactEmail={data.contactEmail}
+                    socialLinks={data.social}
+                ></Footer>
             </div>
-
-            <Footer
-                contactEmail={data.contactEmail}
-                socialLinks={data.social}
-            ></Footer>
-        </div>
         )
     }
 }
@@ -188,7 +190,7 @@ class PhoneForm extends React.Component {
 }
 
 // class PhotoUpload extends React.Component {
- 
+
 //     constructor(props) {
 //         super(props);
 //          this.state = { pictures: []};
@@ -203,7 +205,7 @@ class PhoneForm extends React.Component {
 //         //localStorage.setItem("Picture", JSON.stringify(this.state.pictures));
 //         console.log(picture) 
 //     }
- 
+
 //     render() {
 //         return (
 //             <div>
@@ -220,41 +222,41 @@ class PhoneForm extends React.Component {
 // }
 class PhotoUpload extends React.Component {
     onChange = (imageList) => {
-      // data for submit
-      console.log(imageList);
-      localStorage.setItem("Picture", imageList[0].dataURL);
+        // data for submit
+        console.log(imageList);
+        localStorage.setItem("Picture", imageList[0].dataURL);
     };
-  
-    render() {
-      return (
-        <ImageUploading
-          onChange={this.onChange}
-          maxNumber={10}
-          multiple
-          maxFileSize={5 * 1024 * 1024}
-          acceptType={["jpg", "gif", "png"]}
-        >
-          {({ imageList, onImageUpload, onImageRemoveAll }) => (
-            // write your building UI
-            <div>
-              <button onClick={onImageUpload}>Upload images</button>
-              <button onClick={onImageRemoveAll}>Remove all images</button>
-  
-              {imageList.map((image) => (
-                <div key={image.key}>
-                  <img src={image.dataURL} />
-                  <button onClick={image.onUpdate}>Update</button>
-                  <button onClick={image.onRemove}>Remove</button>
-                </div>
-              ))}
-            </div>
-          )}
-        </ImageUploading>
-      );
-    }
- }
 
-  class Submission extends React.Component {
+    render() {
+        return (
+            <ImageUploading
+                onChange={this.onChange}
+                maxNumber={10}
+                multiple
+                maxFileSize={5 * 1024 * 1024}
+                acceptType={["jpg", "gif", "png"]}
+            >
+                {({ imageList, onImageUpload, onImageRemoveAll }) => (
+                    // write your building UI
+                    <div>
+                        <button onClick={onImageUpload}>Upload images</button>
+                        <button onClick={onImageRemoveAll}>Remove all images</button>
+
+                        {imageList.map((image) => (
+                            <div key={image.key}>
+                                <img src={image.dataURL} />
+                                <button onClick={image.onUpdate}>Update</button>
+                                <button onClick={image.onRemove}>Remove</button>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </ImageUploading>
+        );
+    }
+}
+
+class Submission extends React.Component {
     constructor(props) {
         super(props);
 
@@ -263,32 +265,32 @@ class PhotoUpload extends React.Component {
 
     handleSubmit(event) {
         this.props.onSubmit()
-        var date = new Date().getFullYear() + "/" + new Date().getMonth() + "/"  + new Date().getDate()
+        var date = new Date().getFullYear() + "/" + new Date().getMonth() + "/" + new Date().getDate()
         localStorage.setItem("Date", date)
         localStorage.setItem("index", 0)
         alert('Campaign successfully created!');
-    
-        addCampaign(this.props.fireDB) 
-        
+
+        addCampaign(this.props.fireDB)
+
     }
 
     render() {
         return (
             <Link to="/">
-                    <Button
-                        id="finish_button"
-                        variant="primary"
-                        type="submit"
-                        onClick={(e) => this.handleSubmit()}
-                    >
-                        Finish Creation
+                <Button
+                    id="finish_button"
+                    variant="primary"
+                    type="submit"
+                    onClick={(e) => this.handleSubmit()}
+                >
+                    Finish Creation
                     </Button>
             </Link>
         );
     }
- }
+}
 
- function addCampaign(fireDB) {
+function addCampaign(fireDB) {
 
     var title = localStorage.getItem("Title");
     var type = localStorage.getItem("Type");
@@ -317,14 +319,14 @@ class PhotoUpload extends React.Component {
         Date: date,
         Donation: 0
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+        .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
     console.log(picture)
-    
+
 }
 
 export default CampaignDetails

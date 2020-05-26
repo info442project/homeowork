@@ -2,9 +2,11 @@ import React from 'react';
 import Header from './header';
 import Footer from './Footer';
 import data from './yourdata';
-import { Row, Col, Dropdown } from "react-bootstrap";
+import { Row, Col, Dropdown, ProgressBar } from "react-bootstrap";
 import Card from './Card/Card.js';
-import default_image from "../img/default.svg"
+import default_image from "../img/default.svg";
+import user from "../img/person.png";
+
 
 class Campaign extends React.Component {
 
@@ -49,18 +51,18 @@ class Campaign extends React.Component {
         return (
             <div className="campaign_info">
                 <Header name={data.name} contactEmail={data.contactEmail}></Header>
-                <h4 style={{ textAlign: "center", marginBottom: "40px" }}>{this.state.title + ": " + this.state.type}</h4>
+                <h2 style={{ color: "black", textAlign: "center", marginBottom: "60px", fontWeight: "600" }}>{this.state.title + ": " + this.state.type}</h2>
                 <Row>
-                    <Col md={7}>
+                    <Col md={7} style={{textAlign: "center"}}>
                     <img style={{maxHeight: "500px", maxWidth: "540px"}}src={this.state.picture}></img>
                     </Col>
                     <Col md={5}>
                         <Card
-                            title = {this.state.donation + " donated of " + this.state.number}
+                            title = {<div><ProgressBar now={(this.state.donation / this.state.number) * 100}/> {this.state.donation + " donated of " + this.state.number}</div> }
                             content={
                                 <div>
                                     <div className="description">
-                                        <p style={{fontSize :"14px"}}>Thank you for supporting this campaign! We need more donators to reach the goal - can you help?</p>
+                                        <p style={{fontSize :"14px", color: "rgb(87, 96, 139)"}}>Thank you for supporting this campaign! We need more donators to reach the goal - can you help?</p>
                                     </div>
                                     <div className="btnDonate" style={{textAlign: "center"}}>
                                         <button onClick={() => {this.updateDonation()}}>
@@ -74,12 +76,13 @@ class Campaign extends React.Component {
                 </Row>
                 <Row>
                     <Col md={7}>
-                        <h2 style={{color: "black", marginTop: "40px"}}>{"Location: " + this.state.location}</h2>
-                        <p style={{color: "black", fontSize: "18px"}}>{"Description: " + this.state.purpose}</p>
+                        <h2 style={{color: "rgb(61, 75, 113)", fontWeight: "600", marginTop: "40px", marginLeft: "185px"}}>{"Location: " + this.state.location}</h2>
+                        <p style={{color: "rgb(96, 94, 94)", fontSize: "18px", marginLeft: "185px"}}>{"Description: " + this.state.purpose}</p>
                     </Col>
                     <Col md={5}>
-                    <h4 style={{color: "black", marginTop: "40px"}}>{"Phone: " + this.state.phone}</h4>
-                        <p style={{color: "black", fontSize: "18px"}}>{"Email: " + this.state.email}</p>
+                        <img src={user} style={{width: "150px", height: "150px", marginTop: "40px", marginLeft: "138px"}}></img>
+                        <h6 style={{color: "black", fontSize: "18px", marginLeft: "116px", marginTop: "10px"}}>{"Phone: " + this.state.phone}</h6>
+                        <h6 style={{color: "black", fontSize: "18px", marginLeft: "116px", marginTop: "5px"}}>{"Email: " + this.state.email}</h6>
                     </Col>
                 </Row>
                 <Footer contactEmail={data.contactEmail} socialLinks={data.social}></Footer>

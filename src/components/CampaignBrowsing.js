@@ -91,7 +91,7 @@ class CampaignBrowsing extends Component {
                 <Header name={data.name} contactEmail={data.contactEmail}></Header>
                 <Row>
                     <Col md={9}>
-                        <h4 style={{ textAlign: "center", marginBottom: "40px", marginLeft: "280px" }}>Browse Campaigns</h4>
+                        <h4 style={{ textAlign: "center", marginBottom: "40px", marginLeft: "280px", fontWeight: "600" }}>Browse Campaigns</h4>
                     </Col>
                     <Col md={2}>
                         <Dropdown>

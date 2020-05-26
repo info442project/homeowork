@@ -16,7 +16,7 @@ const CampaignTitle = () => {
       <Header name={data.name} contactEmail={data.contactEmail}></Header>
       <div className="about_container">
         <h1>Name of Campaign</h1>
-        <p>* required information</p>
+        <p style={{marginTop: "10px"}}>* required information</p>
         <h2>
           Tip: Get peoples attention by writing a short focused title for your
           campaign

@@ -16,10 +16,10 @@ const LandingPage = () => {
     <Header name={data.name} contactEmail={data.contactEmail}></Header>
     <Home name={data.landingPageName} paragraph={data.landingPagePara} authorImage={team}></Home>
     <div className="get-started">
-      <h4 style={{ textAlign: "center", marginTop: "25px" }}>Get Started Now</h4>
+      <h2 style={{ textAlign: "center", marginTop: "55px", color: "black" }}>Get Started Now</h2>
       <Row>
         <Col md={6}>
-          <div style={{ float: "right", marginBottom: "40px" }}>
+          <div style={{ float: "right", marginBottom: "55px" }}>
           <Link to='/campaign_type'>
             <Card
               title="Create Campaign"
