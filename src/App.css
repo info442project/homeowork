@@ -54,17 +54,18 @@ a {
 
 .header_container .btnHome {
   position: relative;
-  right: 1000%;
   color: #605e5e;
   font-size: 20px;
   font-weight: 600;
+  padding-right: 30px;
 }
 .header_container .btnBrowse{
   position: relative;
-  right: 700%;;
   color: #605e5e;
   font-size: 20px;
   font-weight: 600;
+  padding-left: 30px;
+  padding-right: 70px;
 }
 .header_container .btnBrowse:hover, .header_container .btnHome:hover{
   color: #3d3c3c;

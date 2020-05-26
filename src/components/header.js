@@ -10,7 +10,7 @@ const Header = ({ name }) => {
             <h1>{name}.</h1>
         </Link>
         <nav>
-          <ul>
+          <ul style={{padding: "30px"}}>
             <li style={{paddingTop: "30px"}}>
               <a href="/" className="btnHome">
                 Home
