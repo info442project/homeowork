@@ -6,7 +6,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-// import ImageUploader from 'react-images-upload';
+import upload from "../img/upload.png"
 import ImageUploading from "react-images-uploading";
 
 
@@ -229,6 +229,19 @@ class PhotoUpload extends React.Component {
 
     render() {
         return (
+            <div>
+            <img src={upload} alt=""></img>
+            <br></br>
+            <br></br>
+            <Form>
+                {" "}
+                <Form.Control
+                    type="text"
+                    placeholder="Alternative text for you picture"
+                    style={{width: 300, height: 30}}
+                />
+            </Form>
+            <br></br>
             <ImageUploading
                 onChange={this.onChange}
                 maxNumber={10}
@@ -244,7 +257,7 @@ class PhotoUpload extends React.Component {
 
                         {imageList.map((image) => (
                             <div key={image.key}>
-                                <img src={image.dataURL} />
+                                <img src={image.dataURL} alt =""/>
                                 <button onClick={image.onUpdate}>Update</button>
                                 <button onClick={image.onRemove}>Remove</button>
                             </div>
@@ -252,6 +265,7 @@ class PhotoUpload extends React.Component {
                     </div>
                 )}
             </ImageUploading>
+            </div>
         );
     }
 }
@@ -268,15 +282,28 @@ class Submission extends React.Component {
         var date = new Date().getFullYear() + "/" + new Date().getMonth() + "/" + new Date().getDate()
         localStorage.setItem("Date", date)
         localStorage.setItem("index", 0)
-        alert('Campaign successfully created!');
-
+        alert('Campaign successfully created!')
         addCampaign(this.props.fireDB)
-
+        var target = [{
+            Title: localStorage.getItem("Title"),
+            Picture: localStorage.getItem("Picture"),
+            Purpose: localStorage.getItem("Purpose"),
+            Type: localStorage.getItem("Type"),
+            Phone: localStorage.getItem("Phone"),
+            Location: localStorage.getItem("Location"),
+            Email: localStorage.getItem("Email"),
+            Number: localStorage.getItem("Number"),
+            Date: localStorage.getItem("Date"),
+            index: 0,
+            Donation: 0
+        }]
+        localStorage.setItem("original_cards", JSON.stringify(target))
+        localStorage.setItem("index", 0)
     }
 
     render() {
         return (
-            <Link to="/">
+            <Link to="/campaign_information">
                 <Button
                     id="finish_button"
                     variant="primary"

@@ -84,6 +84,7 @@ class NameForm extends React.Component {
           <Form.Control
             type="text"
             placeholder="Enter Title"
+            maxlength = "30"
             value={this.state.value}
             onChange={this.handleChange}
           />

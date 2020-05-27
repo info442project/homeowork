@@ -33,8 +33,10 @@ class Campaign extends React.Component {
     }
 
     updateDonation = () => {
+        var donateNum = prompt("Please enter amount you wanna donate:", "Must be Integer");
+        donateNum = parseInt(donateNum)
         this.setState({
-            donation: this.state.donation + 1
+            donation: this.state.donation + donateNum
         });
         // var campaigns = JSON.parse(localStorage.getItem("cards"))
         // var theCampaign = campaigns[localStorage.getItem("index")]
@@ -43,7 +45,7 @@ class Campaign extends React.Component {
         // localStorage.setItem("cards", JSON.stringify(campaigns))
         // localStorage.setItem("original_cards", JSON.stringify(campaigns))
         updateDB(this.props.fireDB, this.state.title, this.state.donation)
-        var currDonation = this.state.donation + 1
+        var currDonation = this.state.donation + donateNum
         alert('Congrats! You have contributed to these ' + currDonation + " donations!");
     }
 

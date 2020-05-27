@@ -25,7 +25,7 @@ const Header = ({ name }) => {
               <Link to="/campaign_type">
                 <Button className="btnCreate" style={{height: "50px", width: "200px"}}>
                   Create Campaign
-                  <img src={arrow}></img>
+                  <img src={arrow} alt=""></img>
               </Button>
               </Link>
             </li>

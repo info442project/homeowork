@@ -232,18 +232,32 @@ class CardsList extends React.Component {
         for (i = 0; i < element_object.length; i++) {
             var object = element_object[i]
             var image
+            // picture
             if (object.Picture === "empty") {
                 image = default_image
             } else {
                 image = object.Picture
             }
+
+            // desc
+            var desc = object.Purpose
+            if (desc.length > 200) {
+                desc = desc.substring(0,200) + "..."
+            }
+
+            // title 
+            var title = object.Title
+            if (title.length > 20) {
+                title = title.substring(0,20) + "..."
+            }
+
             elements.push(<Card 
-                title = {object.Title} 
+                title = {title} 
                 content={
                     <div>
                         <img src={image} alt="purpose of campaign"></img>
                         <div className="description">
-                            <p>{object.Purpose}</p>
+                            <p>{desc}</p>
                         </div>
                         <div className="learn-more">
                             <ToDetail index = {object.index}></ToDetail>
